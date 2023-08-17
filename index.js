@@ -8,7 +8,7 @@ import { Configuration, OpenAIApi } from "openai"
 const app = express();
 
 const corsOptions ={
-  origin:'https://venerable-kringle-477bbd.netlify.app/', 
+  origin:'*', 
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200
 }
