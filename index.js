@@ -4,15 +4,23 @@ config()
 import express from "express"
 import { Configuration, OpenAIApi } from "openai"
 
+const corsOptions ={
+  origin:'https://venerable-kringle-477bbd.netlify.app/', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+
+app.use(cors(corsOptions));
+
 const app = express();
 app.use(express.json());
 // Add Access Control Allow Origin headers
-app.use(function(req, res, next){
+/* app.use(function(req, res, next){
   res.header(`Access-Control-Allow-Origin`, `*`);
   res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
   res.header(`Access-Control-Allow-Headers`, `Content-Type`);
   next();
-});
+}); */
 
 /* app.use(cors()); */
 
